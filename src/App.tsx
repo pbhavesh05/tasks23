@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Button, Container, Row, Col } from "react-bootstrap";
 
-function App(): JSX.Element { 
+function App() { 
     return ( 
         <div className = "App"> 
 
