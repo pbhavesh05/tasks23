@@ -64,3 +64,4 @@ export function convertYesNo(word: string): boolean | null {
 
     }
 }
+

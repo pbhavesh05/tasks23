@@ -20,7 +20,7 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] { 
-    return numbers.map(num => num * 3);  
+    return numbers.map((num:number):number=> num * 3);  
     
 }
 
@@ -29,7 +29,7 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return numbers.map(str => parseInt(str,10) || 0);
+    return numbers.map((str:string):number => parseInt(str,10) || 0);
 }
 
 /**
@@ -40,7 +40,7 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return amounts.map(str => parseInt(str.replace("$",""),10) || 0);
+    return amounts.map((str:string):number => parseInt(str.replace("$",""),10) || 0);
 };
 
 /**
@@ -49,7 +49,7 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return messages.filter(msg => !msg.endsWith("?")).map(msg => msg.endsWith("!")?msg.toUpperCase():msg); 
+    return messages.filter((msg:string):boolean => !msg.endsWith("?")).map((msg:string):string => msg.endsWith("!")?msg.toUpperCase():msg); 
 }
     
 
@@ -58,7 +58,7 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return words.filter(wrd => wrd.length < 4).length; 
+    return words.filter((wrd:string):boolean => wrd.length < 4).length; 
 }
 
 /**
@@ -68,7 +68,7 @@ export function countShortWords(words: string[]): number {
  */
 export function allRGB(colors: string[]): boolean {
     const allowed = ["red", "blue", "green"]; 
-    return colors.filter(color => !allowed.includes(color)).length === 0;
+    return colors.filter((color:string):Boolean => !allowed.includes(color)).length === 0;
 }
 
 /**
@@ -79,7 +79,7 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    const sum = addends.reduce((total,num) => total + num, 0); 
+    const sum = addends.reduce((total:number,num:number):number => total + num, 0); 
     const expression = addends.join("+") || 0; 
     return `${sum}=${expression}`;
 }
