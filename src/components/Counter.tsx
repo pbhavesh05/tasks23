@@ -10,7 +10,7 @@ export function Counter(): React.JSX.Element {
                     setValue(1 + value);
                 }}
             >
-                add one
+                Add One
             </Button>
             to {value}.
         </span>
