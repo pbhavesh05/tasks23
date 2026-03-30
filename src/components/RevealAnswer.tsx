@@ -1,27 +1,17 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { QuestionType } from "../interfaces/question";
 
-export function ChangeType(): React.JSX.Element {
-    const QUESTIONTYPE: QuestionType[] = [
-        "short_answer_question",
-        "multiple_choice_question",
-    ];
-    const [type, setType] = useState<QuestionType>(QUESTIONTYPE[0]);
+export function RevealAnswer(): React.JSX.Element {
+    const [visible, setVisible] = useState<boolean>(false);
 
-    function changeType() {
-        if (type === QUESTIONTYPE[0]) {
-            setType(QUESTIONTYPE[1]);
-        } else {
-            setType(QUESTIONTYPE[0]);
-        }
+    function ontheClick() {
+        setVisible(!visible);
     }
 
     return (
         <div>
-            <Button onClick={changeType}>Change Type</Button>
-            {type === QUESTIONTYPE[1] && <p>Multiple Choice</p>}
-            {type === QUESTIONTYPE[0] && <p>Short Answer</p>}
+            <Button onClick={ontheClick}>Reveal Answer</Button>
+            {visible && <p>42</p>}
         </div>
     );
 }

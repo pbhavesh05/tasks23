@@ -1,9 +1,6 @@
 import React, { act } from "react";
 import { render, screen } from "@testing-library/react";
-
-export function RevealAnswer(): React.JSX.Element {
-    return <div>Reveal Answer Component</div>;
-}
+import { RevealAnswer } from "./RevealAnswer";
 
 describe("RevealAnswer Component tests", () => {
     beforeEach(() => {
